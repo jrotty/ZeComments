@@ -1,6 +1,9 @@
 ### ZeComments
 泽泽Typecho通用评论组建（2025.12.2）,基于 `tailwindscss3` 构建，致力于解决评论皮肤难以开发的痛点，方便快速解决古董主题没有评论功能的问题；
 
+### 效果预览
+https://demo.typecho.work/?theme=Totoro-Skin
+
 ### 特性
 支持显示@父级评论昵称，评论头像源默认 `https://cravatar.cn/avatar/`，也支持 `defined('__TYPECHO_GRAVATAR_PREFIX__','头像源地址')` Typecho原生自定义方法自定义源
 
