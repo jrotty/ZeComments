@@ -1,0 +1,152 @@
+/*@tailwind base;*/
+@tailwind components;
+
+@layer components {
+    .ze-flex-center{
+        @apply flex items-center
+    }
+    .ze-comments-parent{
+        @apply w-full break-all text-gray-900 dark:text-gray-200 mb-3
+    }
+    .ze-comments-title{
+        @apply ze-flex-center text-xl font-medium mb-3
+    }
+    .ze-comments-title-bar{
+        @apply bg-blue-500 h-4 w-1 rounded-full mr-2
+    }
+    .ze-ol-li{
+        @apply list-none m-0 p-0
+    }
+    .ze-ol-li.comment-child{
+        @apply ml-12 sm:ml-14
+    }
+    .ze-ol-li.comment-child .comment-child{
+        @apply !ml-0
+    }
+    .ze-right{
+        @apply flex-initial w-full
+    }
+    .ze-userinfo{
+        @apply ze-flex-center flex-wrap gap-1
+    }
+    .ze-user-name{
+        @apply text-gray-900 dark:text-gray-100
+    }
+    a.ze-user-name{
+        @apply !text-gray-900 dark:!text-gray-100
+    }
+    .ze-user-certificatesolid{
+        @apply text-sky-500 size-5 -ml-0.5
+    }
+    .ze-comment-text{
+        @apply px-4 py-2 my-1 rounded bg-slate-100 text-gray-900 dark:bg-gray-700 dark:text-gray-100
+    }
+    .ze-comment-text a{
+        @apply text-sky-500 duration-300 hover:underline hover:text-sky-600
+    }
+    .ze-comment-text p{
+        @apply text-sm
+    }
+    .ze-meta{
+        @apply ze-flex-center text-xs text-gray-500 gap-1
+    }
+    .ze-meta-svg{
+        @apply size-3.5 mr-0.5
+    }
+    .ze-meta-time{
+        @apply ze-flex-center text-gray-500
+    }
+    .ze-meta-reply{
+        @apply ze-flex-center hover:text-blue-500 border-0 cursor-pointer bg-transparent text-gray-500
+    }
+    .ze-meta-cancel-reply{
+        @apply ze-flex-center text-red-500 border-0 cursor-pointer bg-transparent
+    }
+    .ze-form{
+        @apply flex text-sm my-2
+    }
+    .ze-gravatar-parent{
+         @apply flex-none mr-2
+    }
+    .ze-gravatar-parent1{
+        @apply ze-gravatar-parent hidden md:block
+    }
+    .ze-gravatar{
+        @apply size-10 sm:size-12 object-cover border-2 border-gray-200 rounded-full
+    }
+    .ze-textarea-group {
+        @apply ze-flex-center rounded relative bg-slate-100 dark:bg-gray-700 dark:text-gray-100
+    }
+    .ze-textarea{
+        @apply border-0 resize-none py-2 px-1.5 flex-1 w-full text-sm bg-transparent border-gray-600 placeholder:text-gray-400 dark:text-gray-100
+    }
+    .ze-submit-parent{
+        @apply flex flex-none justify-center px-2.5
+    }
+    .ze-submit{
+        @apply ze-flex-center justify-center m-auto size-9 rounded-full p-2 text-lg transform transition-transform duration-300 hover:rotate-45 text-white bg-blue-500 hover:bg-blue-700 border-0 cursor-pointer
+    }
+    .ze-submit svg{
+        @apply size-5
+    }
+    .ze-input-group {
+        @apply grid grid-cols-1 md:grid-cols-3 gap-4 mt-2
+    }
+    .ze-input-group2 {
+        @apply grid grid-cols-1 md:grid-cols-2 gap-4 mt-2
+    }
+    .ze-input-parent {
+        @apply ze-flex-center text-gray-900 border-gray-100 dark:text-gray-100 rounded overflow-hidden
+    }
+    .ze-input {
+        @apply w-full py-2 px-1.5 text-sm placeholder:text-gray-400 bg-slate-100 dark:bg-gray-700 border-0 dark:text-gray-100
+    }
+    .ze-login{ 
+        @apply absolute inset-0 p-4 flex justify-center items-center bg-slate-100 dark:bg-gray-700
+    }
+    .ze-login a{
+        @apply px-2 py-1 mx-0.5 text-gray-200 duration-300 bg-blue-500 hover:bg-blue-800 hover:text-white rounded-md
+    }
+    .ze-comments-pagination{
+        @apply  text-right mt-5 text-gray-700 dark:text-gray-300
+    }
+    .page-navigator{
+        @apply ze-ol-li bg-gray-100 dark:bg-gray-500 rounded overflow-hidden inline-flex items-center
+    }
+    .page-navigator li{
+        @apply ze-ol-li m-0 px-1 py-0.5 transform transition-transform duration-300 hover:bg-gray-200 dark:hover:bg-gray-800 cursor-pointer
+    }
+    .page-navigator li a{
+        @apply !px-2 !py-0.5 flex items-center justify-center font-mono dark:text-gray-200
+    }
+    .page-navigator li.current{
+        @apply bg-gray-200 dark:bg-gray-800 cursor-pointer
+    }
+    .page-navigator li svg{
+        @apply size-5 py-0.5
+    }
+    .ze-nocomment{
+        @apply w-full text-center text-gray-500 text-xs pt-2 pb-6 flex flex-col gap-2
+    }
+    .ze-nocomment svg{
+        @apply mx-auto size-10
+    }
+    div#nocomment ~ .ze-ol-li .ze-meta-reply{
+        @apply hidden
+    }
+}
+
+@tailwind utilities;
+
+@layer utilities {
+#comments{
+line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;-o-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0deg;
+    --tw-skew-x: 0deg;
+    --tw-skew-y: 0deg;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+}
+}
