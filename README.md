@@ -16,16 +16,20 @@ https://demo.typecho.work/?theme=Totoro-Skin
 2,主题的头部插件接口可以改成 `<?php $this->header(); ?>` 改成 `<?php $this->header('commentReply='); ?>` 去除掉默认加载的评论相关`js`脚本，推荐这样：`<?php $this->header('generator=&template=&commentReply='); ?>` 这样是隐藏typecho版本号隐藏主题名隐藏评论脚本
 （PS：此步骤忽略也可以，不会有冲突，此步骤只是为了减少用不到的默认`js`脚本）
 
-3,支持开启登录才能评论，支持隐藏网址输入栏，详见`comments.php`开头注释说明
+3,支持显示文章作者标识；
 
-4,评论组建样式不一定适合所有主题，可以自行修改 `comments/main.css` 文件调整样式
+4,支持开启登录才能评论；支持隐藏网址输入栏；详见`comments.php`开头注释说明
+
+5,评论组建样式不一定适合所有主题，可以自行修改 `comments/main.css` 文件调整样式
 
 运行 `npm run build` 生成 `css` 文件
 
 ### 更新记录
 
 **2025.12.2**
+
 支持开启登录才能评论，支持隐藏网址输入栏，解决部分`class`未独立问题，解决部分框架`css`类名冗余问题减少与主题本体`class`冲突的可能性
 
 **2025.12.1**
+
 泽泽Typecho通用评论组建诞生
