@@ -6,7 +6,7 @@
         @apply flex items-center
     }
     .ze-comments-parent{
-        @apply w-full break-all text-gray-900 dark:text-gray-200 mb-3
+        @apply box-border w-full break-all text-gray-900 dark:text-gray-200 mb-3
     }
     .ze-comments-title{
         @apply ze-flex-center text-xl font-medium mb-3
@@ -45,7 +45,7 @@
         @apply text-sky-500 duration-300 hover:underline hover:text-sky-600
     }
     .ze-comment-text p{
-        @apply text-sm
+        @apply text-sm !my-0.5 !mx-0
     }
     .ze-meta{
         @apply ze-flex-center text-xs text-gray-500 gap-1
@@ -78,7 +78,7 @@
         @apply ze-flex-center rounded relative bg-slate-100 dark:bg-gray-700 dark:text-gray-100
     }
     .ze-textarea{
-        @apply border-0 resize-none py-2 px-1.5 flex-1 w-full text-sm bg-transparent border-gray-600 placeholder:text-gray-400 dark:text-gray-100
+        @apply border-0 resize-none py-2 px-1.5 flex-1 w-full text-sm bg-transparent border-gray-600 placeholder:text-gray-400 dark:text-gray-100 outline-transparent
     }
     .ze-submit-parent{
         @apply flex flex-none justify-center px-2.5
@@ -99,7 +99,7 @@
         @apply ze-flex-center text-gray-900 border-gray-100 dark:text-gray-100 rounded overflow-hidden
     }
     .ze-input {
-        @apply w-full py-2 px-1.5 text-sm placeholder:text-gray-400 bg-slate-100 dark:bg-gray-700 border-0 dark:text-gray-100
+        @apply w-full py-2 px-1.5 text-sm placeholder:text-gray-400 bg-slate-100 dark:bg-gray-700 border-0 dark:text-gray-100 outline-transparent
     }
     .ze-login{ 
         @apply absolute inset-0 p-4 flex justify-center items-center bg-slate-100 dark:bg-gray-700

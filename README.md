@@ -1,5 +1,5 @@
 ### ZeComments
-泽泽Typecho通用评论组建（2025.12.2）,基于 `tailwindscss3` 构建，致力于解决评论皮肤难以开发的痛点，方便快速解决古董主题没有评论功能的问题；
+泽泽Typecho通用评论组建（2025.12.3）,基于 `tailwindscss3` 构建，致力于解决评论皮肤难以开发的痛点，方便快速解决古董主题没有评论功能的问题；
 
 ### 效果预览
 https://demo.typecho.work/?theme=Totoro-Skin

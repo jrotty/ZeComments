@@ -7,7 +7,7 @@ define('Ze_HiddenUrl', 0);//是否开启隐藏网址输入框
 include_once 'comments/function.php';
 $Class = 'page-navigator';
 define("Ze_mintheurl",__TYPECHO_THEME_DIR__ . '/' . Helper::options()->theme.'/');
-define('Ze_Icons', Ze_mintheurl.'comments/icons.svg?1764643743');
+define('Ze_Icons', Ze_mintheurl.'comments/icons.svg?1764653218');
 ?>
 
 <link rel="stylesheet" href="<?php $this->options->themeUrl('comments/comments.min.css'); ?>"/>
