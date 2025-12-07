@@ -12,7 +12,9 @@ module.exports = {
     extend: {},
   },
   plugins: [],
-
+  safelist: [
+    'page-navigator', // 保持 page-navigator 类名不被移除
+  ],
   corePlugins: {
     preflight: false, // 保持禁用全局基础样式
   },

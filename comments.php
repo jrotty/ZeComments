@@ -1,11 +1,11 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;?>
+<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+include_once 'comments/function.php';
+?>
 <!--泽泽通用评论组建2025.12.2修订版-->
 <?php
 define('Ze_login', 0);//是否开启登录评论
 define('Ze_HiddenUrl', 0);//是否开启隐藏网址输入框
 
-include_once 'comments/function.php';
-$Class = 'page-navigator';
 define("Ze_mintheurl",__TYPECHO_THEME_DIR__ . '/' . Helper::options()->theme.'/');
 define('Ze_Icons', Ze_mintheurl.'comments/icons.svg?1764653218');
 ?>
