@@ -6,7 +6,7 @@
         @apply flex items-center
     }
     .ze-comments-parent{
-        @apply box-border w-full break-all mb-3 text-[var(--text,#374151)]
+        @apply box-border w-full break-all mb-3 text-[var(--text,#374151)] text-[calc(var(--textsize,14px))]
     }
     .ze-comments-title{
         @apply ze-flex-center text-[calc(var(--text-title-size,20px))] font-medium mb-3
@@ -36,7 +36,7 @@
         @apply text-[var(--user-name,#1f2937)] font-medium
     }
     .ze-user-certificatesolid{
-        @apply text-sky-500 size-5 -ml-0.5
+        @apply text-sky-500 size-[var(--submit-svg-size,20px)] -ml-0.5
     }
     .ze-comment-text{
         @apply text-[calc(var(--text-size,14px))] px-4 py-2 my-1 rounded bg-[var(--text-bg,#f1f5f9)] text-[var(--text-color,#374151)]
@@ -48,16 +48,16 @@
         @apply text-[calc(var(--text-size,14px))] !my-0.5 !mx-0
     }
     .ze-meta{
-        @apply ze-flex-center text-xs text-[var(--text-meta-color,#374151)] gap-1
+        @apply ze-flex-center text-[calc(var(--text-meta-size,12px))] text-[var(--text-meta-color,#676767)] gap-1
     }
     .ze-meta-svg{
-        @apply size-3.5 mr-0.5
+        @apply size-[var(--text-meta-size,12px)] mr-0.5
     }
     .ze-meta-time{
-        @apply ze-flex-center text-[var(--text-meta-color,#374151)]
+        @apply ze-flex-center text-[var(--text-meta-color,#676767)]
     }
     .ze-meta-reply{
-        @apply ze-flex-center text-[var(--text-meta-color,#374151)] hover:text-blue-500 border-0 cursor-pointer bg-transparent 
+        @apply ze-flex-center text-[var(--text-meta-color,#676767)] hover:text-blue-500 border-0 cursor-pointer bg-transparent 
     }
     .ze-meta-cancel-reply{
         @apply ze-flex-center text-red-500 border-0 cursor-pointer bg-transparent
@@ -72,7 +72,7 @@
         @apply ze-gravatar-parent hidden md:block
     }
     .ze-gravatar{
-        @apply size-10 sm:size-12 object-cover border-2 border-gray-200 rounded-full !p-0
+        @apply size-[var(--gravatar-size,40px)] sm:size-[var(--max-gravatar-size,48px)] object-cover border-2 border-gray-200 rounded-full !p-0
     }
     .ze-textarea-group {
         @apply ze-flex-center rounded relative text-[var(--input-text,#374151)] bg-[var(--input-bg,#f1f5f9)]
@@ -84,10 +84,10 @@
         @apply flex flex-none justify-center px-2.5
     }
     .ze-submit{
-        @apply ze-flex-center justify-center m-auto size-9 rounded-full p-2 transform transition-transform duration-300 hover:rotate-45 border-0 cursor-pointer text-[var(--submit-text,#fff)] bg-[var(--submit-bg,#3b82f6)] hover:bg-[var(--submit-hover-bg,#2563eb)]
+        @apply ze-flex-center justify-center m-auto rounded-full p-2 transform transition-transform duration-300 hover:rotate-45 border-0 cursor-pointer text-[var(--submit-text,#fff)] bg-[var(--submit-bg,#3b82f6)] hover:bg-[var(--submit-hover-bg,#2563eb)] size-[var(--submit-size,36px)]
     }
     .ze-submit svg{
-        @apply size-5
+        @apply size-[var(--submit-svg-size,20px)]
     }
     .ze-input-group {
         @apply grid grid-cols-1 md:grid-cols-3 gap-4 mt-2
@@ -123,10 +123,10 @@
         @apply cursor-pointer bg-[var(--page-navigator-current,#e5e7eb)]
     }
     .page-navigator li svg{
-        @apply size-5 py-0.5
+        @apply size-[var(--submit-svg-size,20px)] py-0.5
     }
     .ze-nocomment{
-        @apply w-full text-center text-gray-500 text-xs pt-2 pb-6 flex flex-col gap-2
+        @apply w-full text-center text-[var(--text-meta-color,#676767)] text-[calc(var(--text-meta-size,12px))] pt-2 pb-6 flex flex-col gap-2
     }
     .ze-nocomment svg{
         @apply mx-auto size-10

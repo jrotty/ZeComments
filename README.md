@@ -16,6 +16,10 @@ https://demo.typecho.work/?theme=Totoro-Skin
 ```
 .ze-comments-parent{
 --text: #374151; /*评论区文字颜色，主要是覆盖可能没有指定颜色的区域*/
+--textsize: 14px;/*评论区文字大小*/
+
+--gravatar-size:40px;/*默认头像大小*/
+--max-gravatar-size:48px;/*大屏幕头像大小*/
 
 --title-bar-bg: #3b82f6; /*评论区标题左侧装饰条背景颜色*/
 --text-title-size: 20px; /*评论区标题文字大小*/
@@ -28,6 +32,8 @@ https://demo.typecho.work/?theme=Totoro-Skin
 --submit-text: #ffffff; /*提交按钮文字颜色*/
 --submit-bg: #f26b83;  /*提交按钮颜色*/
 --submit-hover-bg: red;/*提交按钮悬停颜色*/
+--submit-size:36px;/*提交按钮大小*/
+--submit-svg-size:20px;/*提交按钮,作者认证图标，翻页按钮图标大小*/
 
 --user-name: #1f2937; /*评论列表用户昵称颜色*/
 --text-size: 14px; /*评论列表文字大小*/
@@ -36,7 +42,8 @@ https://demo.typecho.work/?theme=Totoro-Skin
 --text-link-hover: #2563eb; /*评论列表链接悬停颜色*/
 --text-bg: #f0f0f0; /*评论列表背景颜色*/
 
---text-meta-color: #6b7280; /*评论列表元信息文字颜色*/
+--text-meta-size:12px;/*评论区时间，回复等文字大小*/
+--text-meta-color:#676767;/*评论区时间，回复等文字颜色*/
 
 --pagination-text: #374151; /*分页器文字颜色*/
 --page-navigator-bg: #f1f5f9; /*分页器背景颜色*/
