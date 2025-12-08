@@ -75,13 +75,13 @@
         @apply size-[var(--gravatar-size,40px)] sm:size-[var(--max-gravatar-size,48px)] object-cover border-2 border-gray-200 rounded-full !p-0
     }
     .ze-textarea-group {
-        @apply ze-flex-center rounded relative text-[var(--input-text,#374151)] bg-[var(--input-bg,#f1f5f9)]
+        @apply ze-flex-center gap-1 relative text-[var(--input-text,#374151)]
     }
     .ze-textarea{
-        @apply border-0 resize-none py-2 px-1.5 flex-1 w-full text-[calc(var(--text-input-size,14px))] bg-transparent placeholder:text-[var(--input-placeholder,#d1d5db)] text-[var(--input-text,#374151)] outline-transparent
+        @apply border-0 resize-none py-2 px-1.5 flex-1 w-full text-[calc(var(--text-input-size,14px))] bg-transparent placeholder:text-[var(--input-placeholder,#d1d5db)] text-[var(--input-text,#374151)] outline-none duration-300 focus:shadow bg-[var(--input-bg,#f1f5f9)] rounded 
     }
     .ze-submit-parent{
-        @apply flex flex-none justify-center px-2.5
+        @apply flex flex-none self-stretch justify-center px-2.5 bg-[var(--input-bg,#f1f5f9)] rounded 
     }
     .ze-submit{
         @apply ze-flex-center justify-center m-auto rounded-full p-2 transform transition-transform duration-300 hover:rotate-45 border-0 cursor-pointer text-[var(--submit-text,#fff)] bg-[var(--submit-bg,#3b82f6)] hover:bg-[var(--submit-hover-bg,#2563eb)] size-[var(--submit-size,36px)]
@@ -99,7 +99,7 @@
         @apply ze-flex-center rounded overflow-hidden
     }
     .ze-input {
-        @apply w-full py-2 px-1.5 text-[calc(var(--text-input-size,14px))] placeholder:text-[var(--input-placeholder,#d1d5db)] border-0 outline-transparent bg-[var(--input-bg,#f1f5f9)] text-[var(--input-text,#374151)]
+        @apply w-full py-2 px-1.5 text-[calc(var(--text-input-size,14px))] placeholder:text-[var(--input-placeholder,#d1d5db)] border-0 bg-[var(--input-bg,#f1f5f9)] text-[var(--input-text,#374151)] outline-none duration-300 focus:shadow
     }
     .ze-login{ 
         @apply absolute inset-0 p-4 flex justify-center items-center  bg-[var(--input-bg,#f1f5f9)]
@@ -111,19 +111,19 @@
         @apply  text-right mt-5 text-[var(--pagination-text,#374151)]
     }
     .page-navigator{
-        @apply ze-ol-li bg-[var(---bg,#f1f5f9)] rounded overflow-hidden inline-flex items-center
+        @apply ze-ol-li bg-[var(--page-navigator-bg,#f1f5f9)] rounded overflow-hidden inline-flex items-center
     }
     .page-navigator li{
-        @apply ze-ol-li m-0 px-1 py-0.5 transform transition-transform duration-300 cursor-pointer hover:bg-[var(--page-navigator-current,#e5e7eb)]
+        @apply ze-ol-li m-0 px-1 py-0.5 transform transition-transform duration-300 cursor-pointer hover:bg-[var(--page-navigator-current,#e5e7eb)] self-stretch
     }
     .page-navigator li a{
-        @apply !px-2 !py-0.5 flex items-center justify-center font-mono text-[var(--page-navigator-text,#374151)]
+        @apply !px-2 !py-0.5 flex items-center justify-center font-mono text-[var(--pagination-text,#374151)]
     }
     .page-navigator li.current{
         @apply cursor-pointer bg-[var(--page-navigator-current,#e5e7eb)]
     }
     .page-navigator li svg{
-        @apply size-[var(--submit-svg-size,20px)] py-0.5
+        @apply size-[var(--submit-svg-size,20px)]
     }
     .ze-nocomment{
         @apply w-full text-center text-[var(--text-meta-color,#676767)] text-[calc(var(--text-meta-size,12px))] pt-2 pb-6 flex flex-col gap-2

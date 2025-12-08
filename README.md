@@ -1,5 +1,5 @@
 ### ZeComments
-泽泽Typecho通用评论组建（2025.12.7）,基于 `tailwindscss3` 构建，致力于解决评论皮肤难以开发的痛点，方便快速解决古董主题没有评论功能的问题；
+泽泽Typecho通用评论组建（2025.12.8）,基于 `tailwindscss3` 构建，致力于解决评论皮肤难以开发的痛点，方便快速解决古董主题没有评论功能的问题；
 
 功能：基础评论功能；支持显示文章作者标识；支持开启登录才能评论；支持隐藏网址输入栏
 
@@ -14,6 +14,7 @@ https://demo.typecho.work/?theme=Totoro-Skin
 
 然后可以使用`css`变量自定义配色风格，具体支持变量以及使用案例如下：
 ```
+<style>
 .ze-comments-parent{
 --text: #374151; /*评论区文字颜色，主要是覆盖可能没有指定颜色的区域*/
 --textsize: 14px;/*评论区文字大小*/
@@ -49,7 +50,31 @@ https://demo.typecho.work/?theme=Totoro-Skin
 --page-navigator-bg: #f1f5f9; /*分页器背景颜色*/
 --page-navigator-current: #e5e7eb; /*分页器当前页或悬停时背景颜色*/
 }
+</style>
 ```
+也可以通过修改css变量的方式适配深色模式，如
+```
+<style>
+    @media (prefers-color-scheme: dark) {
+        .ze-comments-parent{
+            --text:#fff;
+            --input-text: #f6f3f4; /*输入框文字颜色*/
+            --input-bg: #364153; /*输入框背景颜色*/
+            --input-placeholder: #99a1af; /*输入框占位符颜色*/
+            
+            --user-name: #f6f3f4; /*评论列表用户昵称颜色*/
+            --text-color: #fff; /*评论列表文字颜色*/
+            --text-bg: #364153; /*评论列表背景颜色*/
+            --text-meta-color:#afafaf;/*评论区时间，回复等文字颜色*/
+            
+            --pagination-text: #f6f3f4; /*分页器文字颜色*/
+            --page-navigator-bg: #364153; /*分页器背景颜色*/
+            --page-navigator-current: #3c82f6; /*分页器当前页或悬停时背景颜色*/
+        }
+    }
+</style>
+```
+
 
 ### 开发
 1,原主题如果有`id`为`comments`的元素请修改成别的或者删掉避免冲突
@@ -62,6 +87,10 @@ https://demo.typecho.work/?theme=Totoro-Skin
 4,评论组建样式不一定适合所有主题，可以自行修改 `comments/main.css` 文件调整样式，然后运行 `npm run build` 生成 `css` 文件
 
 ### 更新记录
+
+**2025.12.8**
+
+修复翻页按钮图标不跟随css变量的问题；解决部分css变量名书写错误；布局排版调整；加入深色模式适配文档说明
 
 **2025.12.7**
 
