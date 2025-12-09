@@ -90,7 +90,7 @@
         @apply size-[var(--submit-svg-size,20px)]
     }
     .ze-input-group {
-        @apply grid grid-cols-1 md:grid-cols-3 gap-4 mt-2
+        @apply grid grid-cols-1 md:grid-cols-3 gap-3 mt-3
     }
     .ze-input-group2 {
         @apply grid grid-cols-1 md:grid-cols-2 gap-4 mt-2
@@ -99,7 +99,7 @@
         @apply ze-flex-center rounded overflow-hidden
     }
     .ze-input {
-        @apply w-full py-2 px-1.5 text-[calc(var(--text-input-size,14px))] placeholder:text-[var(--input-placeholder,#d1d5db)] border-0 bg-[var(--input-bg,#f1f5f9)] text-[var(--input-text,#374151)] outline-none duration-300 focus:shadow
+        @apply w-full py-2 px-1.5 text-[calc(var(--text-input-size,14px))] placeholder:text-[var(--input-placeholder,#d1d5db)] border-0 bg-[var(--input-bg,#f1f5f9)] text-[var(--input-text,#374151)] outline-none duration-300 focus:shadow !m-0
     }
     .ze-login{ 
         @apply absolute inset-0 p-4 flex justify-center items-center  bg-[var(--input-bg,#f1f5f9)]

@@ -1,7 +1,7 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 include_once 'comments/function.php';
 ?>
-<!--泽泽通用评论组建2025.12.8修订版-->
+<!--泽泽通用评论组建2025.12.9修订版https://github.com/jrotty/ZeComments-->
 <?php
 define('Ze_login', 0);//是否开启登录评论
 define('Ze_HiddenUrl', 0);//是否开启隐藏网址输入框
@@ -10,7 +10,7 @@ define("Ze_mintheurl",__TYPECHO_THEME_DIR__ . '/' . Helper::options()->theme.'/'
 define('Ze_Icons', Ze_mintheurl.'comments/icons.svg?1765189812');
 ?>
 
-<link rel="stylesheet" href="<?php $this->options->themeUrl('comments/comments.min.css?1765189816'); ?>"/>
+<link rel="stylesheet" href="<?php $this->options->themeUrl('comments/comments.min.css?1765245686'); ?>"/>
 <?php if(!$this->is('attachment')): ?>
 <div class="ze-comments-parent">
 <div class="ze-comments-title"><span class="ze-comments-title-bar"></span>评论区</div>
