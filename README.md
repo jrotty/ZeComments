@@ -4,7 +4,7 @@
 功能：基础评论功能；支持显示文章作者标识；支持开启登录才能评论；支持隐藏网址输入栏
 
 ### 效果预览
-https://demo.typecho.work/?theme=Totoro-Skin
+https://demo.typecho.fans/?theme=Totoro-Skin
 
 ### 特性
 支持显示@父级评论昵称，评论头像源默认 `https://cravatar.cn/avatar/`，也支持 `defined('__TYPECHO_GRAVATAR_PREFIX__','头像源地址')` Typecho原生自定义方法自定义源
