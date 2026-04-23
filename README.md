@@ -1,18 +1,19 @@
 ### ZeComments
-泽泽Typecho通用评论组建,基于 `tailwindscss3` 构建，致力于解决评论皮肤难以开发的痛点，方便快速解决古董主题没有评论功能的问题；
+泽泽Typecho通用评论组建,基于 `tailwindscss3` 构建，致力于解决评论皮肤难以开发的痛点，方便快速解决古董主题没有评论功能的问题；支持Typecho1.1.0及以上所有版本；
 
-功能：基础评论功能；支持显示文章作者标识；支持开启登录才能评论；支持隐藏网址输入栏
+功能：基础评论功能；支持显示文章作者标识；支持评论表情；支持开启登录才能评论；支持隐藏网址输入栏；
 
 ### 效果预览
 https://demo.typecho.fans/?theme=Totoro-Skin
 
+### 使用
+将`comments.php`和`comments`文件放到你主题文件夹下面，然后在文章或页面模板中引入 `comments.php`。（⚠️：后台评论设置需要手动开启评论回复功能，否则回复评论会提示父级不存在）
+
 ### 特性
 支持显示@父级评论昵称，评论头像源默认 `https://cravatar.cn/avatar/`，也支持 `defined('__TYPECHO_GRAVATAR_PREFIX__','头像源地址')` Typecho原生自定义方法自定义源
 
-### 使用
-将`comments.php`和`comments`文件放到你主题文件夹下面，然后在文章或页面模板中引入 `comments.php`。
-
-然后可以使用`css`变量自定义配色风格，具体支持变量以及使用案例如下：
+### 主题样式适配
+可以使用`css`变量自定义配色风格，具体支持变量以及使用案例如下：
 ```
 <style>
 .ze-comments-parent{
@@ -49,6 +50,12 @@ https://demo.typecho.fans/?theme=Totoro-Skin
 --pagination-text: #374151; /*分页器文字颜色*/
 --page-navigator-bg: #f1f5f9; /*分页器背景颜色*/
 --page-navigator-current: #e5e7eb; /*分页器当前页或悬停时背景颜色*/
+
+--owo-bg-color: #fff; /*表情组件背景色*/
+--owo-text-color: black; /*表情组件文字颜色*/
+--owo-bar-bg-color: #000; /*表情组件bar选中背景色*/
+--owo-bar-text-color: #fff; /*表情组件bar选中文字颜色*/
+--owo-boder-color: #ccc; /*表情框边框颜色*/
 }
 </style>
 ```
@@ -57,20 +64,14 @@ https://demo.typecho.fans/?theme=Totoro-Skin
 <style>
     @media (prefers-color-scheme: dark) {
         .ze-comments-parent{
-            --text:#fff;
-            --input-text: #f6f3f4; /*输入框文字颜色*/
-            --input-bg: #364153; /*输入框背景颜色*/
-            --input-placeholder: #99a1af; /*输入框占位符颜色*/
-            
-            --user-name: #f6f3f4; /*评论列表用户昵称颜色*/
-            --text-color: #fff; /*评论列表文字颜色*/
-            --text-bg: #364153; /*评论列表背景颜色*/
-            --text-meta-color:#afafaf;/*评论区时间，回复等文字颜色*/
-            
-            --pagination-text: #f6f3f4; /*分页器文字颜色*/
-            --page-navigator-bg: #364153; /*分页器背景颜色*/
-            --page-navigator-current: #3c82f6; /*分页器当前页或悬停时背景颜色*/
+            这里修改变量
         }
+    }
+</style>
+或者你站点使用全局class实现的深色模式，比如用dark，就可以这样
+<style>
+    .dark .ze-comments-parent{
+            这里修改变量
     }
 </style>
 ```
@@ -82,15 +83,5 @@ https://demo.typecho.fans/?theme=Totoro-Skin
 - 3，支持开启登录才能评论；支持隐藏网址输入栏；详见`comments.php`开头注释说明
 - 4，评论组建样式不一定适合所有主题，可以自行修改 `comments/main.css` 文件调整样式，然后运行 `npm run build` 生成 `css` 文件
 
-### 更新记录
-> **2025.12.8/9**
-修复翻页按钮图标不跟随css变量的问题；解决部分css变量名书写错误；布局排版调整；调整css预设适配提升兼容性；加入深色模式适配文档说明；
-
-> **2025.12.7**
-支持使用css变量的方式自定义配色风格
-
->**2025.12.2**
-支持开启登录才能评论，支持隐藏网址输入栏，解决部分`class`未独立问题，解决部分框架`css`类名冗余问题减少与主题本体`class`冲突的可能性
-
->**2025.12.1**
-泽泽Typecho通用评论组建诞生
+## demo
+![](./demo.png)

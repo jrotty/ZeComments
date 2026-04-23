@@ -2,7 +2,7 @@
 module.exports = {
   darkMode: 'class',
   content: {
-    files: ["./comments.php"],
+    files: ["./comments.php","./comments/OwO.js"],
     transform: (content) => {
       // 移除非类名的"hidden"（示例：假设类名是class="hidden"，其他场景的hidden替换为空）
       return content.replace(/hidden(?!=["'])/g, "");

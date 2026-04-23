@@ -1,16 +1,24 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit;
+define('Ze_Login', 0);//是否开启登录评论
+define('Ze_HiddenUrl', 0);//是否开启隐藏网址输入框
+define('Ze_Owo', 1);//是否开启评论表情功能
+
+$theme = Helper::options()->theme;
+//$theme = 'ZeComments'; //开发时使用
+//include __DIR__ . '/../ZeComments/comments.php'; //开发时在测试主题评论区调研
+define("Ze_themeUrl",Helper::options()->rootUrl.__TYPECHO_THEME_DIR__ . '/' . $theme .'/');
+define("Ze_min_themeUrl",__TYPECHO_THEME_DIR__ . '/' . $theme .'/');
+define('Ze_Icons', Ze_min_themeUrl.'comments/icons.svg?1765189812');
 include_once 'comments/function.php';
 ?>
-<!--泽泽通用评论组建2025.12.9修订版https://github.com/jrotty/ZeComments-->
-<?php
-define('Ze_login', 0);//是否开启登录评论
-define('Ze_HiddenUrl', 0);//是否开启隐藏网址输入框
+<!--泽泽通用评论组建2026.04.23修订版https://github.com/jrotty/ZeComments-->
 
-define("Ze_mintheurl",__TYPECHO_THEME_DIR__ . '/' . Helper::options()->theme.'/');
-define('Ze_Icons', Ze_mintheurl.'comments/icons.svg?1765189812');
-?>
+<link rel="stylesheet" href="<?php echo Ze_themeUrl.'comments/comments.min.css?2026'; ?>"/>
+<?php if(Ze_Owo):?>
+    <script type='text/javascript'>/* <![CDATA[ */var ZeComments = {"theme_url":"<?php echo Ze_min_themeUrl; ?>"};/* ]]> */</script>
+    <script src="<?php echo Ze_themeUrl.'comments/OwO.js?20260'; ?>" data-no-instant></script>
+<?php endif; ?>
 
-<link rel="stylesheet" href="<?php $this->options->themeUrl('comments/comments.min.css?1765245686'); ?>"/>
 <?php if(!$this->is('attachment')): ?>
 <div class="ze-comments-parent">
 <div class="ze-comments-title"><span class="ze-comments-title-bar"></span>评论区</div>
@@ -38,11 +46,11 @@ define('Ze_Icons', Ze_mintheurl.'comments/icons.svg?1765189812');
     </div>
     <div class="ze-comment-text">
         <?php 
-        $cos=$comments->content;
-        //$cos=parseBiaoQing($comments->content);
-        $cos = preg_replace('#<a(.*?) href="([^"]*/)?(([^"/]*)\.[^"]*)"(.*?)>#',
-        '<a$1 href="$2$3"$5 target="_blank" rel="nofollow" data-ajax="false">', $cos);    
-        echo ZeComments_at($comments->coid).$cos;
+        $comments_content=$comments->content;
+        $comments_content=ZeComments_parseBiaoQing($comments->content);
+        $comments_content = preg_replace('#<a(.*?) href="([^"]*/)?(([^"/]*)\.[^"]*)"(.*?)>#',
+        '<a$1 href="$2$3"$5 target="_blank" rel="nofollow" data-ajax="false">', $comments_content);    
+        echo ZeComments_at($comments->coid).$comments_content;
         ?>
     </div><!-- .comment-content -->
     <div class="ze-meta" data-no-instant>
@@ -84,7 +92,7 @@ define('Ze_Icons', Ze_mintheurl.'comments/icons.svg?1765189812');
 <?php if($this->user->hasLogin()): ?>
 <img no-view class="ze-gravatar" src="<?php echo ZeComments_tx($this->user->mail,"mm",$this->user->uid); ?>" alt="<?php $this->user->screenName(); ?>">
 <?php else: ?>
-<img no-view class="ze-gravatar" src="<?php echo $this->remember('mail',true) ? ZeComments_tx($this->remember('mail',true),"mm") : Ze_mintheurl.'comments/img/tx.png';; ?>" alt="<?php $this->remember('author'); ?>的头像">
+<img no-view class="ze-gravatar" src="<?php echo $this->remember('mail',true) ? ZeComments_tx($this->remember('mail',true),"mm") : Ze_min_themeUrl.'comments/img/tx.png';; ?>" alt="<?php $this->remember('author'); ?>的头像">
 <?php endif; ?>
 <!-- gravatar end -->
 
@@ -93,19 +101,18 @@ define('Ze_Icons', Ze_mintheurl.'comments/icons.svg?1765189812');
 <div class="ze-right">
 <!--input textarea start-->
 <div class="ze-textarea-group">
-<textarea class="ze-textarea" id="comment" name="text" rows="3" placeholder="说点什么吧" required><?php $this->remember('text'); ?></textarea>
+<textarea class="ze-textarea OwO-textarea" id="comment" name="text" rows="3" placeholder="说点什么吧" required><?php $this->remember('text'); ?></textarea>
 <div class="ze-submit-parent">
 <button class="ze-submit" name="submit" type="submit" id="submit" value="发布评论" aria-label="提交评论"><svg aria-hidden="true"><use xlink:href="<?php echo Ze_Icons; ?>#icon-plane"></use></svg>
 </button>
 </div>
-
-<?php if(!$this->user->hasLogin() && Ze_login): ?>
+<?php if(!$this->user->hasLogin() && Ze_Login): ?>
 <div class="ze-login">请先<a href="<?php $this->options->loginUrl(); ?>">登录</a>后发布评论(°∀°)ﾉ</div>
 <?php endif; ?>
 </div>
 <!--input textarea end-->
 
-<?php if(!$this->user->hasLogin() && !Ze_login): ?>
+<?php if(!$this->user->hasLogin() && !Ze_Login): ?>
 
 <!--input group start-->
 <div class="<?php echo Ze_HiddenUrl ? 'ze-input-group2' : 'ze-input-group'; ?>">
@@ -126,7 +133,14 @@ define('Ze_Icons', Ze_mintheurl.'comments/icons.svg?1765189812');
 <!--input group end-->
 
 <?php endif; ?>
- 
+
+<?php if(Ze_Owo):?>
+<div>
+<button type="button" class="ze-OwO-button">owo</div>
+<div class="ze-OwO"></div>
+</div> 
+<?php endif ?>
+
 </div>
 </form>
 </div>
@@ -237,7 +251,22 @@ $comments->listComments([
             this.iom("cancel-comment-reply", "none");
             holder.parentNode.insertBefore(response, holder);
             return false
+        },
+        OwO: function() {
+            //评论表情初始化
+            if (document.getElementsByClassName('ze-OwO')[0]) {
+            var biaoqingapi = ZeComments.theme_url+'comments/OwO.json';
+            var OwO_demo = new OwO({
+                container: document.getElementsByClassName('ze-OwO')[0],
+                target: document.getElementsByClassName('OwO-textarea')[0],
+                api: biaoqingapi,
+                position: 'down',
+                width: '100%',
+                maxHeight: '250px'
+            });
+            }
         }
     }
+    <?php if(Ze_Owo):?>TypechoCommentZe.OwO();<?php endif; ?>
     </script>
 <?php endif; ?>

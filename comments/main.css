@@ -15,7 +15,7 @@
         @apply bg-[var(--title-bar-bg,#3b82f6)] h-4 w-1 rounded-full mr-2
     }
     .ze-ol-li{
-        @apply list-none m-0 p-0
+        @apply list-none mx-0 my-1 p-0
     }
     .ze-ol-li.comment-child{
         @apply ml-12 sm:ml-14
@@ -110,19 +110,19 @@
     .ze-comments-pagination{
         @apply  text-right mt-5 text-[var(--pagination-text,#374151)]
     }
-    .page-navigator{
+    .ze-comments-parent .page-navigator{
         @apply ze-ol-li bg-[var(--page-navigator-bg,#f1f5f9)] rounded overflow-hidden inline-flex items-center
     }
-    .page-navigator li{
+    .ze-comments-parent .page-navigator li{
         @apply ze-ol-li m-0 px-1 py-0.5 transform transition-transform duration-300 cursor-pointer hover:bg-[var(--page-navigator-current,#e5e7eb)] self-stretch
     }
-    .page-navigator li a{
+    .ze-comments-parent .page-navigator li a{
         @apply !px-2 !py-0.5 flex items-center justify-center font-mono text-[var(--pagination-text,#374151)]
     }
-    .page-navigator li.current{
+    .ze-comments-parent .page-navigator li.current{
         @apply cursor-pointer bg-[var(--page-navigator-current,#e5e7eb)]
     }
-    .page-navigator li svg{
+    .ze-comments-parent .page-navigator li svg{
         @apply size-[var(--submit-svg-size,20px)]
     }
     .ze-nocomment{
@@ -133,6 +133,53 @@
     }
     div#nocomment ~ .ze-ol-li .ze-meta-reply{
         @apply hidden
+    }
+
+    .ze-OwO-button{
+        @apply mt-2 bg-[--owo-bg-color] px-2 py-0.5 cursor-pointer text-[14px] rounded border-solid border border-[--owo-boder-color,#ccc]
+    }
+    .ze-OwO{
+        @apply text-[14px] mt-2
+    }
+    .ze-OwO ul, .ze-OwO ol{
+        @apply list-none p-0 m-0 border-0
+    }
+    .ze-OwO .ze-OwO-body{
+        @apply relative hidden rounded border-solid border border-[--owo-boder-color,#ccc]
+    }
+    .ze-OwO.ze-OwO-open .ze-OwO-body{
+        @apply block bg-[--owo-bg-color]
+    }
+    .ze-OwO .ze-OwO-items{
+        @apply hidden overflow-auto p-1 m-0
+    }
+    .ze-OwO .ze-OwO-items-show{
+        @apply block
+    }
+    .ze-OwO .ze-OwO-item{
+        @apply inline-flex m-2 cursor-pointer p-[5px] shadow rounded-md text-gray-900 duration-300
+    }
+    .ze-OwO .ze-OwO-item:hover{
+        @apply shadow-xl
+    }
+    .ze-OwO .ze-emoticon{
+        @apply text-[--owo-text-color]
+    }
+    .ze-OwO .ze-OwO-bar{
+        @apply border-solid border-0 border-t border-[--owo-boder-color,#ccc] text-[--owo-text-color,black]
+    }
+     .ze-OwO .ze-OwO-package-active{
+        @apply bg-[--owo-bar-bg-color,#000] text-[--owo-bar-text-color,#fff]
+     }
+    .ze-OwO .ze-OwO-packages{
+        @apply relative
+    }
+    .ze-OwO .ze-OwO-packages li{
+        @apply inline-flex px-2 py-1 cursor-pointer m-0
+    }
+
+    .biaoqing{
+        @apply m-0 size-[35px]
     }
 }
 
