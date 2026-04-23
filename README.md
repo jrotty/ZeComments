@@ -83,5 +83,12 @@ https://demo.typecho.fans/?theme=Totoro-Skin
 - 3，支持开启登录才能评论；支持隐藏网址输入栏；详见`comments.php`开头注释说明
 - 4，评论组建样式不一定适合所有主题，可以自行修改 `comments/main.css` 文件调整样式，然后运行 `npm run build` 生成 `css` 文件
 
-## demo
+### demo
 ![](./demo.png)
+
+
+### 感谢
+https://tailwindcss.com/
+https://github.com/DIYgod/OwO
+https://github.com/NitroRCr/coolapk-emotion/tree/master/source/svg
+https://shangjixin.com/archives/svg-sprites-emoji.html
