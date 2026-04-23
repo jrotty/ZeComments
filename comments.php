@@ -101,7 +101,7 @@ include_once 'comments/function.php';
 <div class="ze-right">
 <!--input textarea start-->
 <div class="ze-textarea-group">
-<textarea class="ze-textarea OwO-textarea" id="comment" name="text" rows="3" placeholder="说点什么吧" required><?php $this->remember('text'); ?></textarea>
+<textarea class="ze-textarea ze-OwO-textarea" id="comment" name="text" rows="3" placeholder="说点什么吧" required><?php $this->remember('text'); ?></textarea>
 <div class="ze-submit-parent">
 <button class="ze-submit" name="submit" type="submit" id="submit" value="发布评论" aria-label="提交评论"><svg aria-hidden="true"><use xlink:href="<?php echo Ze_Icons; ?>#icon-plane"></use></svg>
 </button>
@@ -258,7 +258,7 @@ $comments->listComments([
             var biaoqingapi = ZeComments.theme_url+'comments/OwO.json';
             var OwO_demo = new OwO({
                 container: document.getElementsByClassName('ze-OwO')[0],
-                target: document.getElementsByClassName('OwO-textarea')[0],
+                target: document.getElementsByClassName('ze-OwO-textarea')[0],
                 api: biaoqingapi,
                 position: 'down',
                 width: '100%',
