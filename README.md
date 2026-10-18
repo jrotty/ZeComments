@@ -4,7 +4,7 @@
 功能：基础评论功能；支持显示文章作者标识；支持评论表情；支持开启登录才能评论；支持隐藏网址输入栏；
 
 ### 效果预览
-https://demo.typecho.fans/?theme=Totoro-Skin
+https://demo.typecho.show/?theme=Totoro-Skin
 
 ### 使用
 将`comments.php`和`comments`文件放到你主题文件夹下面，然后在文章或页面模板中引入 `comments.php`。（⚠️：后台评论设置需要手动开启评论回复功能，否则回复评论会提示父级不存在）
