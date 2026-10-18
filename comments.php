@@ -5,7 +5,7 @@ define('Ze_Owo', 1);//是否开启评论表情功能
 
 $theme = Helper::options()->theme;
 //$theme = 'ZeComments'; //开发时使用
-//include __DIR__ . '/../ZeComments/comments.php'; //开发时在测试主题评论区调研
+//include __DIR__ . '/../ZeComments/comments.php'; //开发时在测试主题评论区调用
 define("Ze_themeUrl",Helper::options()->rootUrl.__TYPECHO_THEME_DIR__ . '/' . $theme .'/');
 define("Ze_min_themeUrl",__TYPECHO_THEME_DIR__ . '/' . $theme .'/');
 define('Ze_Icons', Ze_min_themeUrl.'comments/icons.svg?1765189812');
